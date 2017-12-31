@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Institute for Insight Hadoop Cluster</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+  <link href="css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Hadoop Cluster</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul id="dyn-navbar" class="nav navbar-nav">
+              </ul>
+              <!-- <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul> -->
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+    </header>
+    <section title="Login &amp; Applications">
+        <article title="SSH &amp; SFTP">
+            <!--<a data-proto="sftp" data-port ="22" href="##"></a>-->
+	    <p>
+		The server can be accessed via the Secure Shell protocol for commandline use and file transfer. 
+		Popular clients are:
+		<ul>
+		<li>The <code>ssh</code> and <code>scp</code> commands on POSIX systems</li>
+		<li>File transfer tools like FileZilla (OSX, Windows, Linux) and WinSCP (Windows)</li>
+		<li>Terminal program PuTTY (Windows)...though, the Jupyter Notebook also provides a terminal</li>
+		</ul>
+	    </p>
+	    <p>
+		Users may add public keys to their <code>.ssh/authorized_keys</code> file. Do not remove the existing keys that are needed to utilize the client nodes.
+	    </p>
+        </article>
+        <article title="Jupyter Notebook">
+            <a class="serverip" data-proto="https" data-port ="8000" href="##"></a>
+	    <p>
+		The Jupyter Notebook supports Python 2, Python 3, and R. It also provides a terminal for command line use and simple file management.
+	    </p>
+        </article>
+        <article title="Hadoop Job Manager">
+            <a class="serverip" data-proto="http" data-port ="8088" href="##"></a>
+	    <p>
+		Web interface to track current and historic jobs.
+		<ul>
+		<li>Monitor current Spark applications</li>
+		<li>Review completed or failed Spark jobs with the  <a class="serverip" data-proto="http" data-port ="18080" href="##">Spark History Server</a>
+
+		</ul>
+	    </p>
+	</article>
+        <article title="R Studio">
+            <a class="serverip" data-proto="http" data-port ="8787" href="##"></a>
+	    <p>
+		Full web-based version of R-Studio; similar to desktop version.
+	    </p>
+        </article>
+        <article title="Gitlab">
+            <a class="serverip" data-proto="http" data-port ="9003" href="##"></a>
+	    <p>
+		This version control system is based on GIT, and intended for users to keep versions of their own program source code. Users not permitted to store data-files, any binary files such as  images and executables, and anything that is not created by the user in this repositiry
+	    </p>
+	    <p>
+		At this time, users need to register for this service separately form their user account on the cluster. However, please, use your username so that you can be identified properly.
+            </p>
+        </article>
+    </section>
+    <section title="Administration">
+        <article title="Ambari Server">
+            <a class="serverip" data-proto="http" data-port ="8080" href="##"></a>
+	    <p>
+		Cluster management tool. Only administrators have access.
+	    </p>
+        </article>
+        <article title="Gitlab">
+            <a class="serverip" data-proto="http" data-port ="9003" data-path="/admin" href="##"></a>
+	    <p>
+	        Administrator access to version control system.
+	    </p>
+        </article>
+    </section>
+    <section title="Programming Frameworks">
+	<p>Description of programming frameworks on this cluster.</p> 
+    </section>
+    <section title="Data Sets">
+	 <article title="Twitter Data from 2012">
+            <code>hdfs:///user/molnar/data/election2012</code>
+	    <p>
+This data-set contains over 170,000,000 tweets collected during 3 months leading up to the 2012 presidential elections.
+	    </p>
+            <p>
+The data-set is split up into files with about 1,000,000 to 10,000,000 status records in JSON format. The files are individually compressed with 'gzip'. Each individual file is valid. I suggest piping it through 'zcat' when reading in, rather than uncompressing the entire file.            
+    	   </p>
+	   <p>
+	Spark can read the compressed files directly.
+	   </p>
+        </article>
+
+    </section>
+
+
+    <footer>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/site.js"></script>
+</body>
+</html>

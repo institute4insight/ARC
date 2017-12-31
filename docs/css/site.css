@@ -1,0 +1,11 @@
+body {
+    background-image: url(../cluster-dark.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+section h1  { color: #7CFC00 }
+div.page { padding-top: 5em;}
+article {
+    /* background-color: rgba(256, 256, 256, 0.75); */
+}
